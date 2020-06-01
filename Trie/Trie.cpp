@@ -34,23 +34,7 @@ class TrieNode
       this->isWord = temp->isWord;
       this->childMap =temp->childMap;
     }
-
-    TrieNode(const TrieNode &temp){
-       cout<<"Copy constructor called "<<endl;
-       cout << "Node Copied: " << temp.val << endl;
-       this->val = temp.val;
-       this->isWord = temp.isWord;
-       this->childMap =temp.childMap;
-    }
-
-    TrieNode& operator = (const TrieNode &temp){
-        cout<<"Assignment operator called "<<endl;
-        this->val = temp.val;
-        this->isWord = temp.isWord;
-        this->childMap =temp.childMap;
-        return *this;
-    }
-
+    
     shared_ptr<TrieNode> search(char c){
       cout << "Node Searched in " << this->val << " which is: " << c << endl;
       if (childMap.find(c) == childMap.end()) return shared_ptr<TrieNode>(nullptr);
